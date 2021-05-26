@@ -3,9 +3,9 @@
         {
             //device one 
             "model": "GenericNetworkAdapter",
-            "ip": "tcp://192.168.0.50:4998", //always remember to put the tcp before the IP address
+            "ip": "tcp://192.168.0.0:0000", //always remember to put the tcp before the IP address And remeber to put the door by the end
             "ports": [{
-                "id": "GlobalCache_000C1E051AEE", //it will be used in the rules, and styles to reference the methods and params
+                "id": "GlobalCache_ABC", //it will be used in the rules, and styles to reference the methods and params
                 "name": "TV Philips",
                 "methods": [
                     {
@@ -51,7 +51,7 @@
         },// end of the first device 
         {//start of the second device 
             "model": "GenericNetworkAdapter",
-            "ip": "tcp://192.168.0.50:4998",
+            "ip": "tcp://192.168.0.0:0000",
             "ports": [{
                 "id": "iniciar",
                 "name": "Iniciar Reunião",
@@ -67,11 +67,11 @@
         }  
     ],
     "styles":[ //define the styles
-        "GlobalCache_000C1E051AEE.icon=icon_tv",
-        "GlobalCache_000C1E051AEE.power.icon=icon_power", //set the icon for the power method
-        "GlobalCache_000C1E051AEE.volume.up.icon=icon_up",
-        "GlobalCache_000C1E051AEE.volume.down.icon=icon_down",
-        "GlobalCache_000C1E051AEE.main_method=power",  //define the main method
+        "GlobalCache_abc.icon=icon_tv",
+        "GlobalCache_abc.power.icon=icon_power", //set the icon for the power method
+        "GlobalCache_abc.volume.up.icon=icon_up",
+        "GlobalCache_abc.volume.down.icon=icon_down",
+        "GlobalCache_abc.main_method=power",  //define the main method
         "iniciar.icon=icon_projector",
         "iniciar.start.icon=icon_power",
         "iniciar.volume.up.icon=icon_up",
@@ -85,7 +85,7 @@
     "rules": //still don't know how to use it properly :( 
     {
         "meeting_started": [
-            "GlobalCache_000C1E051AEE.volume.up"
+            "GlobalCache_abc.volume.up"
            
         ],
         "meeting_ended": [
@@ -94,10 +94,10 @@
             "generic_curtain.power.off"
         ],
         "microphone_muted":[
-            "GlobalCache_000C1E051AEE.mute.mute"
+            "GlobalCache_abc.mute.mute"
         ],
         "microphone_unmuted":[
-            "GlobalCache_000C1E051AEE.mute.unmute"
+            "GlobalCache_abc.mute.unmute"
         ],
         "video_started":[
             "generic_curtain.power.on"
