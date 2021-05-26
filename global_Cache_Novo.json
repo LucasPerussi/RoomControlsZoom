@@ -1,26 +1,25 @@
 {
     "adapters": [
         {
-            //device one 
             "model": "GenericNetworkAdapter",
-            "ip": "tcp://192.168.0.50:4998", //always remember to put the tcp before the IP address
+            "ip": "tcp://192.168.0.50:4998", 
             "ports": [{
-                "id": "GlobalCache_000C1E051AEE", //it will be used in the rules, and styles to reference the methods and params
+                "id": "GlobalCache_000C1E051AEE", 
                 "name": "TV Philips",
                 "methods": [
                     {
-                        "id": "power", //main method, will appear togheter with the title of the equipment
+                        "id": "power", 
                         "name": "Power",
                         "command": "sendir,1:1,1,36127,1,1,96,32,16,32,16,16,16,16,16,32,32,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,32,16,16,32,16,16,16,3008\r",
                         "type": "action"
                     },
                     {
-                        "id": "sleep", // each method creates a line
+                        "id": "sleep", 
                         "name": "Sleep",
                         "command": "sendir,1:1,1,36127,1,1,96,32,16,32,16,16,16,16,16,32,32,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,32,16,16,32,16,16,16,3008\r",
                         "params": [{"id":"confirm", "name":"Confirm", "value":"sendir,1:1,1,36127,1,1,96,32,16,32,16,16,16,16,16,32,32,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,32,16,16,32,16,16,16,3008\r"}],
                         "type": "actions"
-                        //if you wanna put more than one unique button in the same line, you can define it creating more than one ID inside of this method parameters
+                        
                     },
                     {
                         "id": "mute",
@@ -48,8 +47,8 @@
                     }
                 ]
             }]
-        },// end of the first device 
-        {//start of the second device 
+        },
+        {
             "model": "GenericNetworkAdapter",
             "ip": "tcp://192.168.0.50:4998",
             "ports": [{
@@ -66,12 +65,12 @@
             }]
         }  
     ],
-    "styles":[ //define the styles
+    "styles":[
         "GlobalCache_000C1E051AEE.icon=icon_tv",
-        "GlobalCache_000C1E051AEE.power.icon=icon_power", //set the icon for the power method
+        "GlobalCache_000C1E051AEE.power.icon=icon_power", 
         "GlobalCache_000C1E051AEE.volume.up.icon=icon_up",
         "GlobalCache_000C1E051AEE.volume.down.icon=icon_down",
-        "GlobalCache_000C1E051AEE.main_method=power",  //define the main method
+        "GlobalCache_000C1E051AEE.main_method=power", 
         "iniciar.icon=icon_projector",
         "iniciar.start.icon=icon_power",
         "iniciar.volume.up.icon=icon_up",
@@ -82,7 +81,7 @@
         "generic_curtain.main_method=power",
         "generic_curtain.icon=icon_curtain"
     ],
-    "rules": //still don't know how to use it properly :( 
+    "rules": 
     {
         "meeting_started": [
             "GlobalCache_000C1E051AEE.volume.up"
@@ -107,5 +106,3 @@
         ]
     }
 }
-
-//new updates coming soon 
